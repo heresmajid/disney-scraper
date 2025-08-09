@@ -32,20 +32,37 @@ Before running anything, make sure you have a `requirements.txt` file in your pr
 3. Update the date to your desired date range or current date
 4. Save the file
 
-### Step 4: Run the Main Script
-1. Make sure your virtual environment is still active (you should see `(venv)` in your command prompt)
-2. Run your Python script:
-   ```
-   python your_script_name.py
-   ```
-   *(Replace `your_script_name.py` with the actual name of your script)*
+### Step 4: Run the Scripts
+You have two options to run the scripts:
+
+**Option A: Run Prices Script**
+- Double-click on `run_prices.bat` **OR** open Command Prompt and type:
+  ```
+  run_prices.bat
+  ```
+- This will automatically activate the virtual environment and run the prices scraper
+
+**Option B: Run Times Script**  
+- Double-click on `run_times.bat` **OR** open Command Prompt and type:
+  ```
+  run_times.bat
+  ```
+- This will automatically activate the virtual environment and run the times scraper
+
+**Note:** You don't need to manually activate the virtual environment - the .bat files handle this automatically!
 
 ### Step 5: Check Output Files
-After the script runs successfully, it will generate:
-- **JSON file** - Contains structured data
-- **CSV file** - Contains data in spreadsheet format
+After the script runs successfully, it will generate files in the **output** folder:
 
-Both files will be created in your project folder.
+**For Prices Script:**
+- `output/prices.json` - Contains structured price data
+- `output/prices.csv` - Contains price data in spreadsheet format
+
+**For Times Script:**
+- `output/times.json` - Contains structured times data  
+- `output/times.csv` - Contains times data in spreadsheet format
+
+The output folder will be created automatically if it doesn't exist.
 
 ## Troubleshooting
 
