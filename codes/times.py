@@ -75,7 +75,7 @@ def fetch_data_for_date(date_str, session):
     try:
         json_data = create_request_payload(date_str)
         
-        proxy = "http://jvaqddnv-rotate:291zhr06ylwg@p.webshare.io:80"
+        proxy = "http://proxy_username:proxy_password@domain_name:proxy_port"
         proxies = {"http": proxy, "https": proxy}
         
         response = session.post(

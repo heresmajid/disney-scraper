@@ -142,7 +142,7 @@ class DisneyPriceScraper:
         json_data = self.build_request_payload(product_option, start_date, end_date)
         
         # Proxy configuration
-        proxy = "http://jvaqddnv-rotate:291zhr06ylwg@p.webshare.io:80"
+        proxy = "http://proxy_username:proxy_password@domain_name:proxy_port"
         proxies = {"http": proxy, "https": proxy}
         
         for attempt in range(CONFIG['max_retries']):
