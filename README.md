@@ -1,8 +1,9 @@
-# Project Setup and Execution Instructions
+# Disney Scraper - Setup and Execution Instructions
 
 ## Prerequisites
 - Python must be installed on your system
 - Make sure you have the project files in a folder
+- **Proxy credentials** (required for API access)
 
 ## Step-by-Step Instructions
 
@@ -26,13 +27,38 @@ Before running anything, make sure you have a `requirements.txt` file in your pr
 
 **Wait for setup to complete** - you'll see a "Setup completed successfully!" message.
 
-### Step 3: Update Date in Script
-1. Open your main Python script file
-2. Look for date-related variables or settings
-3. Update the date to your desired date range or current date
-4. Save the file
+### Step 3: Configure Proxy Settings
+**IMPORTANT:** Before running the scripts, you must set up proxy credentials.
 
-### Step 4: Run the Scripts
+1. Open `codes/prices.py` file
+2. Find this line (around line 120):
+   ```python
+   proxy = "http://YOUR_USERNAME:YOUR_PASSWORD@YOUR_PROXY_URL:PORT"
+   ```
+3. Replace with your proxy credentials
+   
+
+4. Open `codes/times.py` file  
+5. Find this line (around line 60):
+   ```python
+   proxy = "http://YOUR_USERNAME:YOUR_PASSWORD@YOUR_PROXY_URL:PORT"
+   ```
+6. Replace with your proxy credentials   
+
+7. Save both files
+
+### Step 4: Update Date Settings (Optional)
+1. **For Prices Script:** Open `codes/prices.py`
+   - Find line with `'end_date': date(2026, 3, 31)`
+   - Update to your desired end date: `'end_date': date(YEAR, MONTH, DAY)`
+
+2. **For Times Script:** Open `codes/times.py`
+   - Find line with `end_date = date(2025, 10, 31)`
+   - Update to your desired end date: `end_date = date(YEAR, MONTH, DAY)`
+
+3. Save the files
+
+### Step 5: Run the Scripts
 You have two options to run the scripts:
 
 **Option A: Run Prices Script**
@@ -51,7 +77,7 @@ You have two options to run the scripts:
 
 **Note:** You don't need to manually activate the virtual environment - the .bat files handle this automatically!
 
-### Step 5: Check Output Files
+### Step 6: Check Output Files
 After the script runs successfully, it will generate files in the **output** folder:
 
 **For Prices Script:**
@@ -72,14 +98,23 @@ The output folder will be created automatically if it doesn't exist.
 - Run Command Prompt as Administrator
 
 **If script fails:**
+- **Check proxy settings first** - Most common issue
+- Verify proxy credentials are correct and active
 - Make sure you updated the date correctly
 - Check if virtual environment is active
 - Verify all required input files are present
 
 **If no output files are generated:**
 - Check the script for any error messages
+- **Verify proxy is working** - Test with browser or other tools
 - Make sure the date range is valid
+- Check if the API endpoints are accessible
 - Verify input data is available for the specified dates
+
+**Common Error Messages:**
+- `Connection timeout` or `Proxy error` → Check proxy settings
+- `401 Unauthorized` → Verify proxy credentials
+- `No data collected` → Check date range and API availability
 
 ## Need Help?
 If you encounter any issues, please contact the development team with:
